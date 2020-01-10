@@ -10,16 +10,21 @@ import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("Users")
+@RequestMapping("/Users")
 @Api("UsersController")
 public class UsersController {
 
-    @Autowired
+    final
     UsersService usersService;
+
+    @Autowired
+    public UsersController(UsersService usersService) {
+        this.usersService = usersService;
+    }
+
 
     @PostMapping("/Login")
     @ApiOperation(value = "登录", tags = "用户管理", notes = "实现登录功能")
@@ -297,56 +302,56 @@ public class UsersController {
         return usersService.SelectAuthorById(author);
     }
 
-    @PostMapping("/faceAI")
-    @ApiOperation(value = "调用接口", tags = "核心功能", notes = "调用测肤接口")
-    public void faceAI(String Authorization, String body) throws Exception {
-        String url = "https://api.yimei.ai/v2/api/face/analysis/1";
-        Connection connection = Jsoup.connect(url);
-        connection.data("Content-Type","application/x-www-form-urlencoded");
-        connection.data("Authorization", Authorization);
-        connection.data("Content-Length", String.valueOf(body.length()));
-        Document document = connection.post();
-        System.out.println(document.toString());
-//        HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(url).openConnection();
-//        httpURLConnection.setUseCaches(false);
-//        httpURLConnection.setDoOutput(true);
-//        httpURLConnection.setRequestMethod("POST");
-////        System.out.println(httpURLConnection.getRequestMethod());
-//        httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-//        httpURLConnection.setRequestProperty("Authorization", Authorization);
-//        httpURLConnection.setRequestProperty("Content-Length", String.valueOf(body.length()));
-
-//        OutputStream outputStream = null;
-//        OutputStreamWriter outputStreamWriter = null;
-//        InputStream inputStream = null;
-//        InputStreamReader inputStreamReader = null;
-//        BufferedReader reader = null;
-//        StringBuffer resultBuffer = new StringBuffer();
-//        String tempLine = null;
-//        try {
-//            outputStream = httpURLConnection.getOutputStream();
-//            outputStreamWriter = new OutputStreamWriter(outputStream);
-//            outputStreamWriter.write(body);
-//            outputStreamWriter.flush();
-//            //响应失败
-////            if (httpURLConnection.getResponseCode() != 200) {
-////                throw new Exception("HTTP Request is not success, Response code is " + httpURLConnection.getResponseCode());
+//    @PostMapping("/faceAI")
+//    @ApiOperation(value = "调用接口", tags = "核心功能", notes = "调用测肤接口")
+//    public void faceAI(String Authorization, String body) throws Exception {
+//        String url = "https://api.yimei.ai/v2/api/face/analysis/1";
+//        Connection connection = Jsoup.connect(url);
+//        connection.data("Content-Type", "application/x-www-form-urlencoded");
+//        connection.data("Authorization", Authorization);
+//        connection.data("Content-Length", String.valueOf(body.length()));
+//        Document document = connection.post();
+//        System.out.println(document.toString());
+////        HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(url).openConnection();
+////        httpURLConnection.setUseCaches(false);
+////        httpURLConnection.setDoOutput(true);
+////        httpURLConnection.setRequestMethod("POST");
+//////        System.out.println(httpURLConnection.getRequestMethod());
+////        httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+////        httpURLConnection.setRequestProperty("Authorization", Authorization);
+////        httpURLConnection.setRequestProperty("Content-Length", String.valueOf(body.length()));
+//
+////        OutputStream outputStream = null;
+////        OutputStreamWriter outputStreamWriter = null;
+////        InputStream inputStream = null;
+////        InputStreamReader inputStreamReader = null;
+////        BufferedReader reader = null;
+////        StringBuffer resultBuffer = new StringBuffer();
+////        String tempLine = null;
+////        try {
+////            outputStream = httpURLConnection.getOutputStream();
+////            outputStreamWriter = new OutputStreamWriter(outputStream);
+////            outputStreamWriter.write(body);
+////            outputStreamWriter.flush();
+////            //响应失败
+//////            if (httpURLConnection.getResponseCode() != 200) {
+//////                throw new Exception("HTTP Request is not success, Response code is " + httpURLConnection.getResponseCode());
+//////            }
+////            //接收响应流
+////            inputStream = httpURLConnection.getInputStream();
+////            inputStreamReader = new InputStreamReader(inputStream);
+////            reader = new BufferedReader(inputStreamReader);
+////            while ((tempLine = reader.readLine()) != null) {
+////                resultBuffer.append(tempLine);
 ////            }
-//            //接收响应流
-//            inputStream = httpURLConnection.getInputStream();
-//            inputStreamReader = new InputStreamReader(inputStream);
-//            reader = new BufferedReader(inputStreamReader);
-//            while ((tempLine = reader.readLine()) != null) {
-//                resultBuffer.append(tempLine);
-//            }
-//            System.out.println(1);
-//            System.out.println(tempLine);
-//        } finally {
-//            if (outputStreamWriter != null) outputStreamWriter.close();
-//            if (outputStream != null) outputStream.close();
-//            if (reader != null) reader.close();
-//            if (inputStreamReader != null) inputStreamReader.close();
-//            if (inputStream != null) inputStream.close();
-//        }
-    }
+////            System.out.println(1);
+////            System.out.println(tempLine);
+////        } finally {
+////            if (outputStreamWriter != null) outputStreamWriter.close();
+////            if (outputStream != null) outputStream.close();
+////            if (reader != null) reader.close();
+////            if (inputStreamReader != null) inputStreamReader.close();
+////            if (inputStream != null) inputStream.close();
+////        }
+//    }
 }

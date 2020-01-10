@@ -1,6 +1,8 @@
 package com.zhdjj.demo.controller;
 
 import com.zhdjj.demo.DemoApplication;
+import com.zhdjj.demo.controller.UsersController;
+import com.zhdjj.demo.pojo.Users;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
@@ -14,7 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  *
  * @author <Authors name>
  * @version 1.0
- * @since <pre>01/06/2020</pre>
+ * @since <pre>01/03/2020</pre>
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = DemoApplication.class)
@@ -35,7 +37,11 @@ public class UsersControllerTest {
      */
     @Test
     public void testLogin() throws Exception {
-//TODO: Test goes here... 
+        Users users = new Users();
+        users.setUserId(1);
+        users.setUserName("123");
+        users.setUserPassword("123");
+        usersController.Login(users);
     }
 
     /**
@@ -43,7 +49,11 @@ public class UsersControllerTest {
      */
     @Test
     public void testRegistered() throws Exception {
-//TODO: Test goes here... 
+        Users users = new Users();
+        users.setUserId(1);
+        users.setUserName("123");
+        users.setUserPassword("123");
+        usersController.Registered(users);
     }
 
     /**
@@ -51,7 +61,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testUpdatePassword() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -59,7 +69,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testAddTips() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -67,7 +77,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testAllTips() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -75,7 +85,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testCountTips() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -83,7 +93,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testRemoveTips() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -91,7 +101,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testAddTipsComment() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -99,7 +109,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testRemoveComment() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -107,7 +117,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testCountFocused() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -115,7 +125,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testAddFocus() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -123,7 +133,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testRemoveFocus() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -131,7 +141,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testCountArticleLike() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -139,7 +149,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testRemoveArticleLike() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -147,7 +157,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testAddArticleLike() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -155,7 +165,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testCountArticleCollection() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -163,7 +173,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testAddArticleCollection() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -171,7 +181,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testRemoveArticleCollection() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -179,7 +189,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testCountTipsLike() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -187,7 +197,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testAddTipsLike() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -195,7 +205,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testRemoveTipsLike() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -203,7 +213,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testCountTipsCollection() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -211,7 +221,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testAddTipsCollection() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -219,7 +229,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testRemoveTipsCollection() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -227,7 +237,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testAllShoppingChart() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -235,7 +245,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testAddShoppingChart() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -243,7 +253,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testRemoveShoppingChart() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -251,7 +261,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testCountArticleComments() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -259,7 +269,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testAllArticleComments() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -267,7 +277,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testAddArticleComments() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -275,7 +285,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testRemoveArticleComments() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -283,7 +293,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testAllFocus() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -291,7 +301,7 @@ public class UsersControllerTest {
      */
     @Test
     public void testAllFocused() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
@@ -299,114 +309,15 @@ public class UsersControllerTest {
      */
     @Test
     public void testCountFocus() throws Exception {
-//TODO: Test goes here... 
+//TODO: Test goes here...
     }
 
     /**
-     * Method: AllNotice(@RequestBody Users users)
+     * Method: AllNotice(Users users)
      */
     @Test
     public void testAllNotice() throws Exception {
-//TODO: Test goes here... 
-    }
-
-    /**
-     * Method: UpdateNoticeStatus(@RequestBody Notice notice)
-     */
-    @Test
-    public void testUpdateNoticeStatus() throws Exception {
-//TODO: Test goes here... 
-    }
-
-    /**
-     * Method: RemoveNotice(@RequestBody Notice notice)
-     */
-    @Test
-    public void testRemoveNotice() throws Exception {
-//TODO: Test goes here... 
-    }
-
-    /**
-     * Method: AllArticle0()
-     */
-    @Test
-    public void testAllArticle0() throws Exception {
-//TODO: Test goes here... 
-    }
-
-    /**
-     * Method: AllArticle1()
-     */
-    @Test
-    public void testAllArticle1() throws Exception {
-//TODO: Test goes here... 
-    }
-
-    /**
-     * Method: FindShop(@RequestBody Shop shop)
-     */
-    @Test
-    public void testFindShop() throws Exception {
-//TODO: Test goes here... 
-    }
-
-    /**
-     * Method: FindArticle(@RequestBody Article article)
-     */
-    @Test
-    public void testFindArticle() throws Exception {
-//TODO: Test goes here... 
-    }
-
-    /**
-     * Method: FindTips(@RequestBody Tips tips)
-     */
-    @Test
-    public void testFindTips() throws Exception {
-//TODO: Test goes here... 
-    }
-
-    /**
-     * Method: FindUsers(@RequestBody Users users)
-     */
-    @Test
-    public void testFindUsers() throws Exception {
-//TODO: Test goes here... 
-    }
-
-    /**
-     * Method: SelectShopById(@RequestBody Shop shop)
-     */
-    @Test
-    public void testSelectShopById() throws Exception {
-//TODO: Test goes here... 
-    }
-
-    /**
-     * Method: SelectArticleById(Article article)
-     */
-    @Test
-    public void testSelectArticleById() throws Exception {
-//TODO: Test goes here... 
-    }
-
-    /**
-     * Method: SelectAuthorById(Author author)
-     */
-    @Test
-    public void testSelectAuthorById() throws Exception {
-//TODO: Test goes here... 
-    }
-
-    /**
-     * Method: faceAI(String Authorization, String body)
-     */
-    @Test
-    public void testFaceAI() throws Exception {
 //TODO: Test goes here...
-        String Authorization = "Basic MDYyNjI4ZWNlOWU1ZmNmYjpiMjRjN2YyMmNlZjQyZTUxZjIyZmZlZmI0ZWZjZjY4Yg==";
-        String body = "image=https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2540966188,2146570065&fm=26&gp=0.jpg";
-        usersController.faceAI(Authorization, body);
     }
 
 
