@@ -1,4 +1,5 @@
 ### zhdjj
+## swagger地址：http://localhost:8090/swagger-ui.html#
 ## 一款基于宜远智能提供的测肤API接口开发的测肤软件，主要实现功能如下：
 # 1. 美妆首页
 
